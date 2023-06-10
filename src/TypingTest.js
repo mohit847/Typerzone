@@ -100,7 +100,7 @@ const TypingTest = () => {
     setStartTime(0);
     setEndTime(0);
     setIsCompleted(false);
-    setRemainingTime(60);
+    setRemainingTime(300);
   };
 
   return (
