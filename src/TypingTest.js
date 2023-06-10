@@ -9,7 +9,7 @@ const TypingTest = () => {
   const [startTime, setStartTime] = useState(0);
   const [endTime, setEndTime] = useState(0);
   const [isCompleted, setIsCompleted] = useState(false);
-  const [remainingTime, setRemainingTime] = useState(60); 
+  const [remainingTime, setRemainingTime] = useState(300); 
 
   useEffect(() => {
     generateSentence();
@@ -30,12 +30,13 @@ const TypingTest = () => {
 
   const generateSentence = () => {
     const sentences = [
-      'The sun sets behind the mountains, painting the sky in shades of pink and orange. Birds chirp their evening melodies, bidding farewell to another day.',
-      'In the bustling city streets, people rush by, their footsteps echoing on the pavement. Neon lights illuminate the night, creating a vibrant tapestry of colors.',
-      'A gentle breeze rustles through the trees, carrying the scent of freshly bloomed flowers. The tranquil lake reflects the moonlight, casting a mesmerizing glow.',
-      'Lost in a world of words, I immerse myself in stories that transport me to distant lands. Each page turned unveils a new adventure, a new realm to explore.',
-      'The aroma of freshly brewed coffee fills the air, awakening my senses. With each sip, warmth spreads through my body, energizing me for the ahead.',
-      ];
+      'As the radiant sun gracefully dips below the horizon, a breathtaking spectacle unfolds before our eyes. The sky transforms into a vivid tapestry of fiery oranges, soothing purples, and gentle pinks, casting a spellbinding aura. Melodic tunes of birds serenade the fading light, bidding adieu to another day filled with life and beauty.',
+      'In the heart of the bustling city, a symphony of movement and sounds engulfs the streets. People hurriedly traverse through the vibrant urban landscape, their footsteps echoing in harmony with the rhythm of the city. A dazzling array of neon lights adorns the buildings, illuminating the night with a kaleidoscope of vibrant colors, painting the city in an enchanting aura.',
+      'A gentle zephyr dances through the emerald leaves, carrying the fragrance of blossoming flowers on its wings. The tranquil lake mirrors the shimmering moonlight, creating a celestial reflection that enchants all who behold it. Nature\'s orchestra performs a melodious symphony, where rustling leaves, chirping crickets, and the soothing babble of a nearby brook compose a harmonious serenade that soothes the soul.',
+      'Lost within the boundless realms of literature, imagination takes flight with every turned page. Words come alive, weaving intricate tales that transport readers to distant lands and fantastical worlds. With each chapter, reality fades into the background as the mind becomes enraptured by captivating narratives and compelling characters. Through the power of storytelling, ordinary moments become extraordinary adventures, and dreams take shape within the fertile soil of imagination.',
+      'Awakening to the tantalizing aroma of freshly brewed coffee, the senses are invigorated and the world comes alive. Each sip carries the warmth and richness that fuels inspiration and ignites creativity. With every cup, a journey of flavors unfolds, awakening the taste buds and tantalizing the palate. The velvety texture, the nuanced flavors, and the comforting embrace of this beloved beverage create moments of solace and delight, infusing the day with a renewed sense of energy and purpose.',
+    ];
+    
 
     const randomIndex = Math.floor(Math.random() * sentences.length);
     const randomSentence = sentences[randomIndex];
@@ -109,7 +110,7 @@ const TypingTest = () => {
       <strong>Note:</strong> Your accuracy and typing speed will be displayed at the end of the test.
     </p>
     <p className="timer">
-      <strong>Timer:</strong> The 1-minute timer will start once you begin typing.
+      <strong>Timer:</strong> The 5-minute timer will start once you begin typing.
     </p>
       <p className="sentence">
         {sentence.split('').map((char, index) => {
