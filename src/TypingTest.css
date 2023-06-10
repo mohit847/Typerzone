@@ -1,0 +1,127 @@
+.typing-test-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 20px;
+    color: #fff;
+  }
+  
+  .typing-test-container h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+  
+  .typing-test-container p {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .typing-test-container .sentence {
+    font-size: 24px;
+    margin-bottom: 20px;
+    background-color: black;
+    padding: 15px;
+    border-radius: 5px;
+  }
+  
+  .typing-test-container input {
+    width: 100%;
+    max-width: 800px;
+    height: 40px;
+    font-size: 18px;
+    padding: 5px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+  }
+  
+  .typing-test-container span {
+    font-weight: normal;
+    color: inherit;
+  }
+  
+  .typing-test-container span.correct {
+    background-color: transparent;
+  }
+  
+  .typing-test-container span.incorrect {
+    color: red;
+  }
+  
+  .typing-test-container span.next {
+    background-color: rgb(24, 220, 112);
+  }
+  
+  .typing-test-container .results {
+    margin-top: 20px;
+  }
+  
+  .typing-test-container .results p {
+    margin-bottom: 10px;
+  }
+  
+  .typing-test-container .results button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .typing-test-container .results button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .typing-test-container h1,
+  .typing-test-container p,
+  .typing-test-container input,
+  .typing-test-container .results {
+    animation: fadeIn 1s ease;
+  }
+  
+  .typing-test-container .note {
+    font-size: 14px;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin-bottom: 5px;
+  }
+  
+  .typing-test-container .timer {
+    font-size: 14px;
+    position: absolute;
+    bottom: 25px;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+  
+  .typing-test-container .sentence {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+  
+  .typing-test-container .results {
+    margin-top: 30px;
+  }
+  
