@@ -34,7 +34,7 @@ const TypingTest = () => {
       'In the bustling city streets, people rush by, their footsteps echoing on the pavement. Neon lights illuminate the night, creating a vibrant tapestry of colors.',
       'A gentle breeze rustles through the trees, carrying the scent of freshly bloomed flowers. The tranquil lake reflects the moonlight, casting a mesmerizing glow.',
       'Lost in a world of words, I immerse myself in stories that transport me to distant lands. Each page turned unveils a new adventure, a new realm to explore.',
-      'The aroma of freshly brewed coffee fills the air, awakening my senses. With each sip, warmth spreads through my body, energizing me for the day ahead.',
+      'The aroma of freshly brewed coffee fills the air, awakening my senses. With each sip, warmth spreads through my body, energizing me for the ahead.',
       ];
 
     const randomIndex = Math.floor(Math.random() * sentences.length);
