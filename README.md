@@ -1,3 +1,10 @@
+# Typer Zone
+
+This is a simple typing test application built using React. It allows users to test their typing speed and accuracy by typing a given sentence within a specified time limit.
+
+#Live Demo
+Check out the live demo of TyperZone: ([typerzone.netlify.app](https://typerzone.netlify.app/))
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
