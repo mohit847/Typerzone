@@ -9,11 +9,37 @@ const TypingTest = () => {
   const [startTime, setStartTime] = useState(0);
   const [endTime, setEndTime] = useState(0);
   const [isCompleted, setIsCompleted] = useState(false);
-  const [remainingTime, setRemainingTime] = useState(300); 
+  const [remainingTime, setRemainingTime] = useState(60);
+  const [difficulty, setDifficulty] = useState('Medium');
+
+  const difficultyLevels = {
+    Easy: {
+      sentences: [
+        'This is an easy sentence for typing practice.',
+        'Typing is fun and easy when you practice rgit egularly.',
+      ],
+      time: 30,
+    },
+    Medium: {
+      sentences: [
+        'Medium-level @ sentences are % a good challenge > for typing practice.',
+        'Typing accurately + and quickly O takes practice & and dedication.',
+      ],
+      time: 20,
+    },
+    Hard: {
+      sentences: [
+        '(Hard senten!ces test *your t-yping skil[ls to the limit.',
+        'Improving%% you#r typing spe^ed is a rew@arding exp()erience.',
+      ],
+      time: 10,
+    },
+  };
 
   useEffect(() => {
     generateSentence();
-  }, []);
+    setRemainingTime(difficultyLevels[difficulty].time);
+  }, [difficulty]);
 
   useEffect(() => {
     let timer;
@@ -29,15 +55,7 @@ const TypingTest = () => {
   }, [startTime, isCompleted, remainingTime]);
 
   const generateSentence = () => {
-    const sentences = [
-      'As the radiant sun gracefully dips below the horizon, a breathtaking spectacle unfolds before our eyes. The sky transforms into a vivid tapestry of fiery oranges, soothing purples, and gentle pinks, casting a spellbinding aura. Melodic tunes of birds serenade the fading light, bidding adieu to another day filled with life and beauty.',
-      'In the heart of the bustling city, a symphony of movement and sounds engulfs the streets. People hurriedly traverse through the vibrant urban landscape, their footsteps echoing in harmony with the rhythm of the city. A dazzling array of neon lights adorns the buildings, illuminating the night with a kaleidoscope of vibrant colors, painting the city in an enchanting aura.',
-      'A gentle zephyr dances through the emerald leaves, carrying the fragrance of blossoming flowers on its wings. The tranquil lake mirrors the shimmering moonlight, creating a celestial reflection that enchants all who behold it. Nature\'s orchestra performs a melodious symphony, where rustling leaves, chirping crickets, and the soothing babble of a nearby brook compose a harmonious serenade that soothes the soul.',
-      'Lost within the boundless realms of literature, imagination takes flight with every turned page. Words come alive, weaving intricate tales that transport readers to distant lands and fantastical worlds. With each chapter, reality fades into the background as the mind becomes enraptured by captivating narratives and compelling characters. Through the power of storytelling, ordinary moments become extraordinary adventures, and dreams take shape within the fertile soil of imagination.',
-      'Awakening to the tantalizing aroma of freshly brewed coffee, the senses are invigorated and the world comes alive. Each sip carries the warmth and richness that fuels inspiration and ignites creativity. With every cup, a journey of flavors unfolds, awakening the taste buds and tantalizing the palate. The velvety texture, the nuanced flavors, and the comforting embrace of this beloved beverage create moments of solace and delight, infusing the day with a renewed sense of energy and purpose.',
-    ];
-    
-
+    const sentences = difficultyLevels[difficulty].sentences;
     const randomIndex = Math.floor(Math.random() * sentences.length);
     const randomSentence = sentences[randomIndex];
     setSentence(randomSentence);
@@ -100,18 +118,28 @@ const TypingTest = () => {
     setStartTime(0);
     setEndTime(0);
     setIsCompleted(false);
-    setRemainingTime(300);
+    setRemainingTime(difficultyLevels[difficulty].time);
   };
 
   return (
     <div className="typing-test-container">
       <h1>Welcome to the Typer Zone</h1>
       <p className="note">
-      <strong>Note:</strong> Your accuracy and typing speed will be displayed at the end of the test.
-    </p>
-    <p className="timer">
-      <strong>Timer:</strong> The 5-minute timer will start once you begin typing.
-    </p>
+        <strong>Note:</strong> Your accuracy and typing speed will be displayed at the end of the test.
+      </p>
+      {/* <p className="timer">
+        <strong>Timer:</strong> {remainingTime} seconds
+      </p> */}
+      <div className="difficulty-selector">
+        <label>Difficulty Level: </label>
+        <select value={difficulty} onChange={(e) => setDifficulty(e.target.value)}>
+          {Object.keys(difficultyLevels).map((level) => (
+            <option key={level} value={level}>
+              {level}
+            </option>
+          ))}
+        </select>
+      </div>
       <p className="sentence">
         {sentence.split('').map((char, index) => {
           let charClass = '';
@@ -149,12 +177,6 @@ const TypingTest = () => {
       ) : (
         <div className="results">
           <p>Time remaining: {remainingTime} seconds</p>
-          {remainingTime === 0 && (
-            <div>
-              <p>Typing speed: {calculateTypingSpeed()} words per minute</p>
-              <p>Accuracy: {accuracy}%</p>
-            </div>
-          )}
         </div>
       )}
     </div>
