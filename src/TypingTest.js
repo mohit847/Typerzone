@@ -25,14 +25,14 @@ const TypingTest = () => {
         'Medium-level @ sentences are % a good challenge > for typing practice.',
         'Typing accurately + and quickly O takes practice & and dedication.',
       ],
-      time: 20,
+      time: 30,
     },
     Hard: {
       sentences: [
         '(Hard senten!ces test *your t-yping skil[ls to the limit.',
         'Improving%% you#r typing spe^ed is a rew@arding exp()erience.',
       ],
-      time: 10,
+      time: 30,
     },
   };
 
